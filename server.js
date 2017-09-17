@@ -91,6 +91,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(process.env.PORT || 8000, function() {
+app.listen(process.env.PORT || '8000', function() {
   console.log("travel factory project. Listening on 8000.")
 });
