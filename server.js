@@ -7,7 +7,7 @@ var port = process.env.PORT || 8000;
 
 var app = express();
 var server = require('http').Server(app);
-var promise = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", function(err){
+var db = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", {useMongoClient:true} ,function(err){
   if (err) throw err;
 });
 
