@@ -3,6 +3,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var User = require("./models/userModel")
+var port = process.env.PORT || 8000
 
 var app = express();
 
@@ -91,6 +92,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(process.env.PORT || '8000', function() {
-  console.log("travel factory project. Listening on 8000.")
+server.listen(port, function() {
+  console.log("travel factory project. Listening on " + port)
 });
