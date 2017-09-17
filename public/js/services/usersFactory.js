@@ -7,6 +7,7 @@ app.factory('usersFactory', function($http, $rootScope){
   usersFactory.getUsers = function(){
     return $http.get('/employees')
         .then(function(response){
+          console.log("yes");
         return(response.data);
         },
         function(err){
