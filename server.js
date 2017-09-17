@@ -6,7 +6,7 @@ var User = require("./models/userModel")
 
 var app = express();
 
-mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", function(err){
+var promise = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", function(err){
   if (err) throw err;
 });
 
@@ -91,6 +91,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(process.env.PORT || 8000, function() {
+app.listen(process.env.PORT || '8000', function() {
   console.log("travel factory project. Listening on 8000.")
 });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-    },
+  },
   "author": "einar barzilay",
   "license": "ISC",
   "dependencies": {
@@ -14,9 +14,9 @@
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
-    "mongoose": "^4.8.6",
+    "mongoose": "^4.11.11",
     "node": "0.0.0"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/einarzb/travel-factory.git"
