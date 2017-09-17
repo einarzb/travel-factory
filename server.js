@@ -5,7 +5,10 @@ var bodyParser = require('body-parser');
 var User = require("./models/userModel")
 
 var app = express();
-mongoose.connect(process.env.CONNECTION_STRING ||'mongodb://localhost/employees');
+
+mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", function(err){
+  if (err) throw err;
+});
 
 //middleware
 app.use(bodyParser.json());
