@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var User = require("./models/userModel")
 
 var app = express();
-mongoose.connect('mongodb://localhost/employees');
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/employees');
 
 //middleware
 app.use(bodyParser.json());
@@ -87,6 +87,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(8000, function() {
+
+app.listen(process.env.PORT || 8000, function() {
   console.log("travel factory project. Listening on 8000.")
 });
