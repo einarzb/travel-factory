@@ -3,9 +3,11 @@ app.factory('usersFactory', function($http, $rootScope){
   var usersFactory = {};
 
   usersFactory.getUsers = function(){
-    return $http.get('/employees')
-        .then(function(response){
-        return(response.data);
+    return $http.get('/employees').then(function(response){
+        return response.data;
+      },
+      function(err){
+        console.log(err);
       });
   };
 
