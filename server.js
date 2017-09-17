@@ -24,13 +24,13 @@ app.get('/', function(req, res, next){
 
 //connectong DB to route
 app.get('/employees', function (req, res, next) {
-    User.find(function (error, users) {
+    User.find(function (error, employees) {
           if (error) {
             console.error(error)
             return next(error);
           } else {
-            res.send(users);
-            console.log(users);
+            res.send(employees);
+            console.log(employees);
           }
      });
 });

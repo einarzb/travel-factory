@@ -2,17 +2,11 @@ app.factory('usersFactory', function($http, $rootScope){
 
   var usersFactory = {};
 
-
-
   usersFactory.getUsers = function(){
     return $http.get('/employees')
         .then(function(response){
-          console.log("yes");
         return(response.data);
-        },
-        function(err){
-            console.error(err)
-          });
+      });
   };
 
   usersFactory.addToList = function(newUser){

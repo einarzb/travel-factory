@@ -12,6 +12,7 @@ app.controller('mainController', function($scope, usersFactory) {
   $scope.getUsers()
     .then(function(response){
       $scope.users = response;
+      console.log($scope.users);
     })
     .catch(function(error){
       console.log(error);
