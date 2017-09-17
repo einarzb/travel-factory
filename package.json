@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
   "author": "einar barzilay",
   "license": "ISC",
   "dependencies": {
