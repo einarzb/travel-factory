@@ -1,0 +1,28 @@
+{
+  "name": "reddit-fun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "font-awesome": "^4.7.0",
+    "mongoose": "^4.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/einarzb/beer-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/einarzb/beer-list/issues"
+  },
+  "homepage": "https://github.com/einarzb/beer-list#readme",
+  "description": ""
+}

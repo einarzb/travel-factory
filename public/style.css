@@ -1,0 +1,57 @@
+body{
+    background-color:#e1e1e1;
+}
+p{font-size: 12px;padding-right:10px;width: 160px;padding-top: 10px;color: grey;font-weight:normal;text-align: center}
+
+img{
+  height:100px;
+  border-radius: 50%;
+  width: 130px;
+  padding-right: 10px;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+.user{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  margin-left: 15px;
+  margin-bottom: 10px;
+  height:180px;
+  background-color: #fff;
+  width: 440px;
+}
+
+
+.userControl{
+  padding-right: 10px;
+  padding-top: 5px;
+  height: 20px;
+}
+
+.form{width: 300px;
+  right: 300px;
+  margin-top: 400px;
+  background-color:#fff;
+   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.btns{
+  margin-top: 155px;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+input{  margin-top: 2px;height:10px;
+}
+
+.fa {color:#000;border:none;}
+.fa-plus {color:#3fcca1;font-size:22px;border-radius: 50%;border:1px #3fcca1 solid;padding:10px;font-weight: lighter}
+.abv{width:80px;}
+.main{overflow: hidden;}
+
+.user-container{
+  padding-top: 30px;
+  margin-left: 10px;
+}
