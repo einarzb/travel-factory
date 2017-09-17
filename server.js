@@ -26,11 +26,10 @@ app.get('/', function(req, res, next){
 app.get('/employees', function (req, res, next) {
     User.find(function (error, employees) {
           if (error) {
-            console.error(error)
+            console.log(error);
             return next(error);
           } else {
             res.send(employees);
-            console.log(employees);
           }
      });
 });
