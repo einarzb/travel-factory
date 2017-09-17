@@ -1,11 +1,13 @@
 app.factory('usersFactory', function($http, $rootScope){
 
-  var usersFactory = {users: []};
+  var usersFactory = {};
+
+
 
   usersFactory.getUsers = function(){
     return $http.get('/employees')
         .then(function(response){
-        angular.copy(response.data, usersFactory.users);
+        return(response.data);
         },
         function(err){
             console.error(err)
@@ -15,8 +17,7 @@ app.factory('usersFactory', function($http, $rootScope){
   usersFactory.addToList = function(newUser){
     return $http.post('/employees', newUser)
       .then(function(response){
-         //client
-         usersFactory.users.push(response.data);
+        return response.data;
         },
         function(err){
           console.error(err);

@@ -2,14 +2,29 @@ app.controller('mainController', function($scope, usersFactory) {
 //initializing
   $scope.editable = false;
   $scope.editMode = true;
-
+  $scope.users = [];
 
   var userCopy = this.copy;
 
-  $scope.users = usersFactory.users;
+  //getting items from db
+  $scope.getUsers = usersFactory.getUsers;
+
+  $scope.getUsers()
+    .then(function(response){
+      $scope.users = response;
+    })
+    .catch(function(error){
+      console.log(error);
+    })
 
   $scope.addUser = function(newUser) {
-    usersFactory.addToList(newUser);
+    usersFactory.addToList(newUser)
+    .then(function(response){
+    $scope.users.push(response);
+    })
+    .catch(function(error){
+      console.log(error);
+    })
   };
 
   $scope.removeFromList = usersFactory.removeFromList;
