@@ -7,7 +7,8 @@ var Contact = require("./models/contactModel")
 var port = process.env.PORT || 8000;
 
 var app = express();
-var db = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/travelfactory", {useMongoClient:true} ,function(err){
+
+mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/travelfactory" , function(err){
   if (err) throw err;
 });
 

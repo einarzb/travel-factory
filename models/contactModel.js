@@ -11,7 +11,8 @@ var contactSchema = new Schema ({
   phone:{
     type:Number
   },
-  location:{type:Number}
+  lng: {type:Number},
+  lat: {type:Number}
 });
 
 var Contact = mongoose.model('Contact', contactSchema);
