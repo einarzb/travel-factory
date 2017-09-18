@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema ({
+var contactSchema = new Schema ({
   title: {type:String},
   name: {type:String},
   image:{type:String},
@@ -14,5 +14,5 @@ var userSchema = new Schema ({
   location:{type:Number}
 });
 
-var User = mongoose.model('User', userSchema);
-module.exports = User;
+var Contact = mongoose.model('Contact', contactSchema);
+module.exports = Contact;

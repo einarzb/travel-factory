@@ -3,11 +3,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var bodyParser = require('body-parser');
-var User = require("./models/userModel")
+var Contact = require("./models/contactModel")
 var port = process.env.PORT || 8000;
 
 var app = express();
-var db = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", {useMongoClient:true} ,function(err){
+var db = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/travelfactory", {useMongoClient:true} ,function(err){
   if (err) throw err;
 });
 
@@ -24,7 +24,7 @@ app.get('/', function(req, res, next){
 
 //connectong DB to route
 app.get('/travelfactory', function (req, res, next) {
-    User.find(function (error, travelfactory) {
+    Contact.find(function (error, travelfactory) {
           if (error) {
             res.status(500).send({ error: err });
             console.log(error);
@@ -35,14 +35,14 @@ app.get('/travelfactory', function (req, res, next) {
      });
 });
 
-//add user
+//add Contact
 app.post('/travelfactory', function(req, res, next) {
-  User.create(req.body, function(err, user) {
+  Contact.create(req.body, function(err, Contact) {
     if (err) {
       console.error(err)
       return next(err);
     } else {
-      res.json(user);
+      res.json(Contact);
     }
   });
 });
@@ -50,26 +50,26 @@ app.post('/travelfactory', function(req, res, next) {
 
 //delete
 app.delete('/travelfactory/:id', function(req, res, next){
-  User.remove({_id: req.params.id},function(err){
+  Contact.remove({_id: req.params.id},function(err){
     if(err){
       console.error(err);
       return next (err);
     }else{
-    res.send("user deleted");
+    res.send("Contact deleted");
     }
   });
 });
 
 //update
 app.put('/travelfactory/:id', function(req, res, next){
-  User.find({_id: req.params.id}).exec(function(err, user){
+  Contact.find({_id: req.params.id}).exec(function(err, Contact){
   });
-  User.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, user){ //pass 3 things: id, req.body, boolean and func
+  Contact.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, Contact){ //pass 3 things: id, req.body, boolean and func
      if(err){
       console.error(err);
       return next (err);
     }else{
-      res.send(user);
+      res.send(Contact);
     }
   });
 });
