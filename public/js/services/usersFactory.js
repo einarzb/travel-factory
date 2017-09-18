@@ -25,8 +25,8 @@ app.factory('usersFactory', function($http, $rootScope){
       usersFactory.addLngLat = function(userLocation){
         console.log("im in addlnglat ");
         lat = userLocation.lat;
-        console.log(lat);
-      }
+        lng = userLocation.lng;
+return lat      }
 
   usersFactory.getUsers = function(){
     return $http.get('/travelfactory')
