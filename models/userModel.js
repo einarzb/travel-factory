@@ -7,6 +7,7 @@ var userSchema = new Schema ({
   image:{type:String},
   address: {type:String},
   company: {type:String},
+  companyAddress: {type:String},
   phone:{
     type:Number}
 });
