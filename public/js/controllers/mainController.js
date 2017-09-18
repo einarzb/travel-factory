@@ -13,6 +13,7 @@ app.controller('mainController', function($scope, usersFactory) {
   $scope.users = usersFactory.users;
 
   $scope.addUser = function(newUser) {
+    console.log(newUser);
     usersFactory.addToList(newUser);
   };
 

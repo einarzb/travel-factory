@@ -48,6 +48,7 @@ app.factory('usersFactory', function($http, $rootScope){
   };
 
   usersFactory.addToList = function(newUser){
+    console.log("im add to list");
     return $http.post('/travelfactory', newUser)
       .then(function(response){
          //client
