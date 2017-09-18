@@ -6,7 +6,6 @@ app.controller('mainController', function($scope, usersFactory) {
 
   $scope.searchAddress = function(address){
     usersFactory.getLatLng(address).then(function(response) {
-        console.log(response);
         $scope.location = response;
       }, function(err) {
         console.error(err);
