@@ -8,6 +8,7 @@ var userSchema = new Schema ({
   address: {type:String},
   company: {type:String},
   companyAddress: {type:String},
+  location: {type: Object},
   phone:{
     type:Number}
 });

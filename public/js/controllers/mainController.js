@@ -4,13 +4,14 @@ app.controller('mainController', function($scope, usersFactory) {
   $scope.editMode = true;
 
 
-  $scope.searchAddress = function(address){
-    usersFactory.getLatLng(address).then(function(response) {
-        $scope.location = response;
+  $scope.searchAddress = function(user){
+    usersFactory.getLatLng(user.address).then(function(response) {
+        user.location = response;
+        $scope.closeForm();
       }, function(err) {
         console.error(err);
+        $scope.closeForm();
       });
-    $scope.closeForm();
   }
 
   var userCopy = this.copy;
@@ -40,6 +41,12 @@ app.controller('mainController', function($scope, usersFactory) {
 
   }
 
-    usersFactory.getUsers();
+  $scope.createUserWithAddress = function(newUser) {
+    $scope.searchAddress(newUser);
+    setTimeout(function(){ console.log(newUser); $scope.addUser(newUser); }, 1000);
+    // setTimeout(function(){ console.log(usr.$$state.value.address); $scope.searchAddress(usr.$$state.value.address) }, 1000);
+  }
+
+  usersFactory.getUsers();
 
 });
