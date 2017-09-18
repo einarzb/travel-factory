@@ -4,10 +4,11 @@ app.factory('usersFactory', function($http, $rootScope){
   var lat;
 
   usersFactory.getLatLng = function(address){
-  $http({
+  return $http({
         method: 'GET',
         url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address +'&key=AIzaSyDKvvBgAkSCugEbXckutuAFuqPzthsCnJ8'
         }).then(function (response) {
+            console.log(response);
             var lat = response.data.results[0].geometry.location.lat;
             var lng = response.data.results[0].geometry.location.lng;
 
