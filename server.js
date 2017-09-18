@@ -7,7 +7,6 @@ var User = require("./models/userModel")
 var port = process.env.PORT || 8000;
 
 var app = express();
-var server = require('http').Server(app);
 var db = mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/employees", {useMongoClient:true} ,function(err){
   if (err) throw err;
 });
@@ -25,13 +24,13 @@ app.get('/', function(req, res, next){
 
 //connectong DB to route
 app.get('/travelfactory', function (req, res, next) {
-    User.find(function (error, employees) {
+    User.find(function (error, travelfactory) {
           if (error) {
             res.status(500).send({ error: err });
             console.log(error);
             return next(error);
           } else {
-            res.send(employees);
+            res.send(travelfactory);
           }
      });
 });
@@ -93,6 +92,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-server.listen(port, function() {
+app.listen(port, function() {
   console.log("travel factory project. Listening now on " + port)
 });
