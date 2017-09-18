@@ -1,36 +1,33 @@
 app.factory('usersFactory', function($http, $rootScope){
 
   var usersFactory = {users: []};
+  var lat;
 
   usersFactory.getLatLng = function(address){
-  console.log(address);
   $http({
         method: 'GET',
         url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address
         }).then(function (response) {
-            console.log('im working')
-            console.log(response.data)
-
             var lat = response.data.results[0].geometry.location.lat;
             var lng = response.data.results[0].geometry.location.lng;
-            console.log(lat);
-            console.log(lng);
 
             var userLocation = {
               lat:lat,
               lng:lng
             }
-
-            console.log(userLocation);
-            
-        //     console.log(movieInfo);
-        //     addMovie(movieInfo);
-        //     return movieInfo;
-        //
-        // }, function errorCallback(response) {
-        //     alert("please fill in correct name");
-    });
+            usersFactory.addLngLat(userLocation);
+            return userLocation;
+        }, function errorCallback(response) {
+            alert("please fill in correct address");
+          });
 }
+
+      usersFactory.addLngLat = function(userLocation){
+        console.log("im in addlnglat ");
+        lat = userLocation.lat;
+        console.log(lat);
+      }
+
   usersFactory.getUsers = function(){
     return $http.get('/travelfactory')
         .then(function(response){
@@ -42,7 +39,6 @@ app.factory('usersFactory', function($http, $rootScope){
   };
 
   usersFactory.addToList = function(newUser){
-    console.log("im add to list");
     return $http.post('/travelfactory', newUser)
       .then(function(response){
          //client
