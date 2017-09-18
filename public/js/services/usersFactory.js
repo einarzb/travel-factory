@@ -6,7 +6,7 @@ app.factory('usersFactory', function($http, $rootScope){
   usersFactory.getLatLng = function(address){
   $http({
         method: 'GET',
-        url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address
+        url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address +'&key=AIzaSyDKvvBgAkSCugEbXckutuAFuqPzthsCnJ8'
         }).then(function (response) {
             var lat = response.data.results[0].geometry.location.lat;
             var lng = response.data.results[0].geometry.location.lng;
@@ -26,7 +26,8 @@ app.factory('usersFactory', function($http, $rootScope){
         console.log("im in addlnglat ");
         lat = userLocation.lat;
         lng = userLocation.lng;
-return lat      }
+            return lat
+      }
 
   usersFactory.getUsers = function(){
     return $http.get('/travelfactory')

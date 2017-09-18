@@ -42,14 +42,14 @@
               <div class="col-md-12 col-xs-4 user" ng-repeat="user in users">
                                 <div class="col-md-4 col-xs-4">
                                     <img ng-src="{{user.image}}">
-                                    <p ng-hide="editable"><em>{{user.title}}</em></p>
+                                    <p ng-hide="editable"><b>{{user.title}}</b></p>
                                 </div>
 
                                 <div class="col-md-8 col-xs-4 col-md-push-1">
                                     <p ng-hide="editable">
                                            <b>{{user.name}}</b> <br>
-                                           {{user.address}} <br><br>
-                                           {{user.company}} <br>
+                                           <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br><br>
+                                           <b>{{user.company}}</b><br>
                                            p:{{user.phone | phoneNumber}}
                                         </p>
                                     <!--edit form-->
