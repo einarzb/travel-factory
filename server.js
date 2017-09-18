@@ -27,6 +27,7 @@ app.get('/', function(req, res, next){
 app.get('/employees', function (req, res, next) {
     User.find(function (error, employees) {
           if (error) {
+            res.status(500).send({ error: err });
             console.log(error);
             return next(error);
           } else {
