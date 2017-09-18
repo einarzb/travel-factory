@@ -26,7 +26,7 @@
                             <input type="text" class="form-control" placeholder="address" ng-model="newUser.address"></input>
                             <input type="number" min="0" class="form-control" placeholder="phone" ng-model="newUser.phone" required></input>
                             <input type="text" class="form-control" placeholder="company name" ng-model="newUser.company"></input>
-                            <textarea type="text" class="form-control" rows="8" cols="80" placeholder="company info" ng-model="newUser.companyAdress"></textarea>
+                            <input type="text" class="form-control" rows="8" cols="80" placeholder="company info" ng-model="newUser.companyAddress"></input>
                             <input type="text" class="form-control" placeholder="Image URL" ng-model="newUser.image"></input><br>
                             <button type="button" class="btn btn-primary" ng-click="createUserWithAddress(newUser)">Submit</button>
                         </div>
@@ -49,10 +49,12 @@
                                 <div class="col-md-8 col-xs-4 col-md-push-1">
                                     <p ng-hide="editable" class="text-left">
                                            <b>{{user.name}}</b> <br>
-                                           <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br><br>
+                                           <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br>
                                            <b>lat:</b>{{user.location.lat.toFixed(2)}} | <b>lng:</b>{{user.location.lng.toFixed(2)}} <br>
                                            <b>{{user.company}}</b><br>
-                                           {{user.companyAddress}} <br>
+                                           <span style="width:120px;display:inline-flex;">
+                                             {{user.companyAddress}}
+                                           </span> <br>
                                            p:{{user.phone | phoneNumber}}
                                         </p>
                                     <!--edit form-->
@@ -62,7 +64,7 @@
                                           <input type="text" class="form-control userControl" placeholder="address" ng-model="updatedUser.address" ng-show="editable"></input>
                                           <input type="number" min="0" class="form-control userControl" placeholder="phone number" ng-model="updatedUser.phone" ng-show="editable"></input>
                                          <input type="text" class="form-control userControl" placeholder="company" ng-model="updatedUser.company" ng-show="editable"></input>
-                                         <input type="text" class="form-control" rows="2" cols="80" placeholder="company info" ng-show="editable" ng-model="updatedUser.companyAdress"></input>
+                                         <input type="text" class="form-control" rows="2" cols="80" placeholder="company info" ng-show="editable" ng-model="updatedUser.companyAddress"></input>
 
                                     </div>
                                </div>
