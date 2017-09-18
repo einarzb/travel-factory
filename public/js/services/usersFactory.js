@@ -1,12 +1,11 @@
 app.factory('usersFactory', function($http, $rootScope){
 
   var usersFactory = {users: []};
-  var lat;
 
   usersFactory.getLatLng = function(address){
   return $http({
         method: 'GET',
-        url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address +'&key=AIzaSyDKvvBgAkSCugEbXckutuAFuqPzthsCnJ8'
+        url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address
         }).then(function (response) {
             console.log(response);
             var lat = response.data.results[0].geometry.location.lat;
@@ -16,19 +15,11 @@ app.factory('usersFactory', function($http, $rootScope){
               lat:lat,
               lng:lng
             }
-            usersFactory.addLngLat(userLocation);
             return userLocation;
         }, function errorCallback(response) {
             alert("please fill in correct address");
           });
 }
-
-      usersFactory.addLngLat = function(userLocation){
-        console.log("im in addlnglat ");
-        lat = userLocation.lat;
-        lng = userLocation.lng;
-            return lat
-      }
 
   usersFactory.getUsers = function(){
     return $http.get('/travelfactory')
