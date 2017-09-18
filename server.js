@@ -24,7 +24,7 @@ app.get('/', function(req, res, next){
 });
 
 //connectong DB to route
-app.get('/employees', function (req, res, next) {
+app.get('/travelfactory', function (req, res, next) {
     User.find(function (error, employees) {
           if (error) {
             res.status(500).send({ error: err });
@@ -37,7 +37,7 @@ app.get('/employees', function (req, res, next) {
 });
 
 //add user
-app.post('/employees', function(req, res, next) {
+app.post('/travelfactory', function(req, res, next) {
   User.create(req.body, function(err, user) {
     if (err) {
       console.error(err)
@@ -50,7 +50,7 @@ app.post('/employees', function(req, res, next) {
 
 
 //delete
-app.delete('/employees/:id', function(req, res, next){
+app.delete('/travelfactory/:id', function(req, res, next){
   User.remove({_id: req.params.id},function(err){
     if(err){
       console.error(err);
@@ -62,7 +62,7 @@ app.delete('/employees/:id', function(req, res, next){
 });
 
 //update
-app.put('/employees/:id', function(req, res, next){
+app.put('/travelfactory/:id', function(req, res, next){
   User.find({_id: req.params.id}).exec(function(err, user){
   });
   User.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, user){ //pass 3 things: id, req.body, boolean and func

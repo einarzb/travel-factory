@@ -3,7 +3,7 @@ app.factory('usersFactory', function($http, $rootScope){
   var usersFactory = {users: []};
 
   usersFactory.getUsers = function(){
-    return $http.get('/employees')
+    return $http.get('/travelfactory')
         .then(function(response){
         angular.copy(response.data, usersFactory.users);
         },
@@ -13,7 +13,7 @@ app.factory('usersFactory', function($http, $rootScope){
   };
 
   usersFactory.addToList = function(newUser){
-    return $http.post('/employees', newUser)
+    return $http.post('/travelfactory', newUser)
       .then(function(response){
          //client
          usersFactory.users.push(response.data);
@@ -24,7 +24,7 @@ app.factory('usersFactory', function($http, $rootScope){
   };
 
   usersFactory.removeFromList = function (id) {
-    return $http.delete('/employees/' + id).then(function(response){
+    return $http.delete('/travelfactory/' + id).then(function(response){
         usersFactory.getUsers();
        },
          function(err){
@@ -33,7 +33,7 @@ app.factory('usersFactory', function($http, $rootScope){
   };
 
   usersFactory.saveUser = function(id, updatedUser){
-    return $http.put('/employees/' + id, updatedUser).then(function(response){
+    return $http.put('/travelfactory/' + id, updatedUser).then(function(response){
       usersFactory.getUsers();
       this.editable = false;
 
