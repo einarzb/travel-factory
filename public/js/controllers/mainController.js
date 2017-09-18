@@ -42,12 +42,6 @@ app.controller('mainController', function($scope, usersFactory) {
 
   }
 
-  // $scope.createUserWithAddress = function(newUser) {
-  //   $scope.searchAddress(newUser);
-  //   setTimeout(function(){ console.log(newUser); $scope.addUser(newUser); }, 1000);
-  //   // setTimeout(function(){ console.log(usr.$$state.value.address); $scope.searchAddress(usr.$$state.value.address) }, 1000);
-  // }
-
   usersFactory.getUsers();
 
 });
