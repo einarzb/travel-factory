@@ -4,7 +4,6 @@ app.controller('mainController', function($scope, usersFactory) {
   $scope.editMode = true;
 
   $scope.searchAddress = function(address){
-    console.log(address);
     usersFactory.getLatLng(address);
     $scope.closeForm();
   }
