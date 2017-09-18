@@ -36,6 +36,7 @@ app.factory('usersFactory', function($http, $rootScope){
       .then(function(response){
          //client
          usersFactory.users.push(response.data);
+         return response.data;
         },
         function(err){
           console.error(err);

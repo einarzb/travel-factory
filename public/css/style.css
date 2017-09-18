@@ -19,7 +19,9 @@ img{
   background-color: #fff;
   width: 440px;
 }
-
+.save-icon-wrapper {
+  margin-right: 70%;
+}
 
 .userControl{
   padding-right: 10px;
@@ -46,7 +48,7 @@ button{
 input{  margin-top: 2px;
 }
 
-.fa-floppy-o{margin-right:230px;margin-top:-15px;font-size:20px;color:#000;}
+.fa-floppy-o{margin-top:-15px;font-size:20px;}
 .fa {color:#000;border:none;}
 .fa-plus {color:#3fcca1;font-size:22px;border-radius: 50%;border:1px #3fcca1 solid;padding:10px;font-weight: lighter}
 .abv{width:80px;}

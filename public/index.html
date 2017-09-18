@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="modal-body">
-                      <form ng-submit="addUser(newUser)">
+                      <form>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="full name" ng-model="newUser.name"></input>
                             <input type="text" class="form-control" placeholder="job description" ng-model="newUser.title"></input>
@@ -28,7 +28,7 @@
                             <input type="text" class="form-control" placeholder="company name" ng-model="newUser.company"></input>
                             <textarea type="text" class="form-control" rows="8" cols="80" placeholder="company info" ng-model="newUser.companyAdress"></textarea>
                             <input type="text" class="form-control" placeholder="Image URL" ng-model="newUser.image"></input><br>
-                            <button type="submit" class="btn btn-primary" ng-click="searchAddress(newUser.address)">Submit</button>
+                            <button type="button" class="btn btn-primary" ng-click="createUserWithAddress(newUser)">Submit</button>
                         </div>
                       </form>
                     </div>
@@ -50,7 +50,7 @@
                                     <p ng-hide="editable" class="text-left">
                                            <b>{{user.name}}</b> <br>
                                            <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br><br>
-                                           <b>lat:</b> {{(location.lat).toFixed(2)}} | <b>lng:</b> {{(location.lng).toFixed(2)}}<br>
+                                           <b>lat:</b>{{user.location.lat.toFixed(2)}} | <b>lng:</b>{{user.location.lng.toFixed(2)}} <br>
                                            <b>{{user.company}}</b><br>
                                            {{user.companyAddress}} <br>
                                            p:{{user.phone | phoneNumber}}
@@ -76,7 +76,7 @@
                                     <button ng-show="editMode" type="button" ng-click="removeFromList(user._id)"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>
 
-                                    <button type="button" ng-show="editable" ng-click="saveUser(user._id, updatedUser)">
+                                    <button class="save-icon-wrapper" type="button" ng-show="editable" ng-click="saveUser(user._id, updatedUser)">
                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
                                     </button>
                                </div>
