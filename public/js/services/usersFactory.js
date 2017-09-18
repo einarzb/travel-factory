@@ -10,25 +10,19 @@ app.factory('usersFactory', function($http, $rootScope){
         }).then(function (response) {
             console.log('im working')
             console.log(response.data)
-            // var titleMovie = response.data.Title;
-            // var plot = response.data.Plot;
-            // var movieYear = response.data.Year;
-            // var actors = response.data.Actors;
-            // var poster = response.data.Poster;
-            // var priceTag = Math.floor(Math.random() * (20-5) + 5); //math.random
-            //
-            // console.log(titleMovie,plot,actors,poster,priceTag);
-            // console.log(movieYear);
 
-        //     var movieInfo = {
-        //       titleMovie:titleMovie,
-        //       plot:plot,
-        //       movieYear:movieYear,
-        //       actors:actors,
-        //       poster:poster,
-        //       priceTag:priceTag
-        //     };
-        //
+            var lat = response.data.results[0].geometry.location.lat;
+            var lng = response.data.results[0].geometry.location.lng;
+            console.log(lat);
+            console.log(lng);
+
+            var userLocation = {
+              lat:lat,
+              lng:lng
+            }
+
+            console.log(userLocation);
+            
         //     console.log(movieInfo);
         //     addMovie(movieInfo);
         //     return movieInfo;
