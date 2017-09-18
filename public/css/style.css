@@ -43,9 +43,10 @@ button{
   background-color: transparent;
 }
 
-input{  margin-top: 2px;height:10px;
+input{  margin-top: 2px;
 }
 
+.fa-floppy-o{margin-right:230px;margin-top:-15px;font-size:20px;}
 .fa {color:#000;border:none;}
 .fa-plus {color:#3fcca1;font-size:22px;border-radius: 50%;border:1px #3fcca1 solid;padding:10px;font-weight: lighter}
 .abv{width:80px;}
