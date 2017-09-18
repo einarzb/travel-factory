@@ -50,7 +50,7 @@
                                     <p ng-hide="editable" class="text-left">
                                            <b>{{user.name}}</b> <br>
                                            <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br><br>
-                                           <b>lat:</b>{{location.lat}}.toFixed(2) | <b>lng:</b>{{location.lng}}.toFixed(2) <br>
+                                           <b>lat:</b> {{(location.lat).toFixed(2)}} | <b>lng:</b> {{(location.lng).toFixed(2)}}<br>
                                            <b>{{user.company}}</b><br>
                                            {{user.companyAddress}} <br>
                                            p:{{user.phone | phoneNumber}}

@@ -9,7 +9,9 @@ var userSchema = new Schema ({
   company: {type:String},
   companyAddress: {type:String},
   phone:{
-    type:Number}
+    type:Number
+  },
+  location:{type:Number}
 });
 
 var User = mongoose.model('User', userSchema);
