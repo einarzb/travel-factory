@@ -41,9 +41,8 @@ app.controller('mainController', function($scope, usersFactory) {
       usersFactory.saveUser(id, updatedUser);
       $scope.editMode = true;
       this.editable = false;
-
-  }
-
+  });
+}
   usersFactory.getUsers();
 
 });
