@@ -35,18 +35,17 @@ app.controller('mainController', function($scope, usersFactory) {
     $('#formModal').modal('hide');
   }
 
-  $scope.saveUser = function(id, updatedUser){
+  $scope.updateUser = function(id, updatedUser) {
+    usersFactory.getLatLng(updatedUser.address).then(function(response) {
+      updatedUser.location = response;
       usersFactory.saveUser(id, updatedUser);
       $scope.editMode = true;
       this.editable = false;
-
-  }
-
-  // $scope.createUserWithAddress = function(newUser) {
-  //   $scope.searchAddress(newUser);
-  //   setTimeout(function(){ console.log(newUser); $scope.addUser(newUser); }, 1000);
-  //   // setTimeout(function(){ console.log(usr.$$state.value.address); $scope.searchAddress(usr.$$state.value.address) }, 1000);
-  // }
+  }, function(err) {
+    console.error(err);
+    $scope.closeForm();
+  });
+}
 
   usersFactory.getUsers();
 

@@ -26,7 +26,7 @@
                             <input type="text" class="form-control" placeholder="address" ng-model="newUser.address"></input>
                             <input type="number" min="0" class="form-control" placeholder="phone" ng-model="newUser.phone" required></input>
                             <input type="text" class="form-control" placeholder="company name" ng-model="newUser.company"></input>
-                            <textarea type="text" class="form-control" rows="8" cols="80" placeholder="company info" ng-model="newUser.companyAdress"></textarea>
+                            <textarea type="text" class="form-control" rows="8" cols="80" placeholder="company info" ng-model="newUser.companyAddress"></textarea>
                             <input type="text" class="form-control" placeholder="Image URL" ng-model="newUser.image"></input><br>
                             <button type="button" class="btn btn-primary" ng-click="createUserWithAddress(newUser)">Submit</button>
                         </div>
@@ -76,7 +76,7 @@
                                     <button ng-show="editMode" type="button" ng-click="removeFromList(user._id)"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>
 
-                                    <button class="save-icon-wrapper" type="button" ng-show="editable" ng-click="saveUser(user._id, updatedUser)">
+                                    <button class="save-icon-wrapper" type="button" ng-show="editable" ng-click="updateUser(user._id, updatedUser)">
                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
                                     </button>
                                </div>
