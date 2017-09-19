@@ -26,7 +26,7 @@
                             <input type="text" class="form-control" placeholder="full name" ng-model="newUser.name"></input>
                             <input type="text" class="form-control" placeholder="job description" ng-model="newUser.title"></input>
                             <input type="text" class="form-control" placeholder="address" ng-model="newUser.address"></input>
-                            <input type="number" min="0" class="form-control" placeholder="phone" ng-model="newUser.phone" required></input>
+                            <input type="number" min="0" class="form-control" placeholder="phone" ng-model="newUser.phone" ng-bind="phone | tel" required></input>
                             <input type="text" class="form-control" placeholder="company name" ng-model="newUser.company"></input>
                             <textarea type="text" class="form-control" rows="2" cols="80" placeholder="company info" ng-model="newUser.companyAddress"></textarea>
                             <input type="text" class="form-control" placeholder="Image URL" ng-model="newUser.image"></input><br>
@@ -59,7 +59,7 @@
                                  <span style="width:170px;display:inline-flex;">
                                    {{user.companyAddress}}
                                  </span> <br>
-                                 p:{{user.phone | phoneNumber}}
+                                 p:{{user.phone | tel }}
                               </p>
                           <!--edit form-->
                           <div class="userControl">
