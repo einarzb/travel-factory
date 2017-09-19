@@ -1,4 +1,4 @@
-<html>
+<html ng-app="travelFactoryApp">
 
 <head>
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
@@ -9,8 +9,8 @@
     <title>travel factory</title>
 </head>
 
-<body ng-app="travelFactoryApp">
-        <div class="row" ng-controller="mainController">
+<body ng-controller="mainController">
+        <div class="row">
           <div id="formModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <div class="modal-content">
@@ -40,6 +40,8 @@
                 </div>
               </div>
             </div>
+          </div>
+
 
             <div class="row user-container">
               <div class="col-md-12 col-xs-4 user" ng-repeat="user in users">
@@ -57,7 +59,7 @@
                                            <span style="width:170px;display:inline-flex;">
                                              {{user.companyAddress}}
                                            </span> <br>
-                                           p:{{user.phone}}
+                                           p:{{user.phone | phoneNumber}}
                                         </p>
                                     <!--edit form-->
                                     <div class="userControl">
@@ -86,6 +88,7 @@
                                </div>
                   </div>
               </div>
+
               <div class="row">
                 <div class="col-md-12 col-xs-4 text-center">
                   <button type="button" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
