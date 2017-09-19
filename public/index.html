@@ -45,47 +45,46 @@
 
             <div class="row user-container">
               <div class="col-md-12 col-xs-4 user" ng-repeat="user in users">
-                                <div class="col-md-4 col-xs-4">
-                                    <img ng-src="{{user.image}}">
-                                    <p ng-hide="editable"><b>{{user.title}}</b></p>
-                                </div>
+                      <div class="col-md-4 col-xs-4">
+                          <img ng-src="{{user.image}}">
+                          <p ng-hide="editable"><b>{{user.title}}</b></p>
+                      </div>
 
-                                <div class="col-md-8 col-xs-4 col-md-push-1">
-                                    <p ng-hide="editable" class="text-left">
-                                           <b>{{user.name}}</b> <br>
-                                           <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br>
-                                           <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br><br>
-                                           <b>{{user.company}}</b><br>
-                                           <span style="width:170px;display:inline-flex;">
-                                             {{user.companyAddress}}
-                                           </span> <br>
-                                           p:{{user.phone | phoneNumber}}
-                                        </p>
-                                    <!--edit form-->
-                                    <div class="userControl">
-                                      <input type="text" class="form-control userControl" placeholder="full name" ng-model="updatedUser.name" ng-show="editable"></input>
-                                         <input type="text" class="form-control" placeholder="position" ng-model="updatedUser.title" ng-show="editable"></input>
-                                          <input type="text" class="form-control userControl" placeholder="address" ng-model="updatedUser.address" ng-show="editable"></input>
-                                          <input type="number" min="0" class="form-control userControl" placeholder="phone number" ng-model="updatedUser.phone" ng-show="editable"></input>
-                                         <input type="text" class="form-control userControl" placeholder="company" ng-model="updatedUser.company" ng-show="editable"></input>
-                                         <input type="text" class="form-control" rows="2" cols="80" placeholder="company info" ng-show="editable" ng-model="updatedUser.companyAddress"></input>
+                      <div class="col-md-8 col-xs-4 col-md-push-1">
+                          <p ng-hide="editable" class="text-left">
+                                 <b>{{user.name}}</b> <br>
+                                 <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br>
+                                 <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br><br>
+                                 <b>{{user.company}}</b><br>
+                                 <span style="width:170px;display:inline-flex;">
+                                   {{user.companyAddress}}
+                                 </span> <br>
+                                 p: {{user.phone | phoneNumber}}
+                              </p>
+                          <!--edit form-->
+                          <div class="userControl">
+                                <input type="text" class="form-control userControl" placeholder="full name" ng-model="updatedUser.name" ng-show="editable"></input>
+                                <input type="text" class="form-control" placeholder="position" ng-model="updatedUser.title" ng-show="editable"></input>
+                                <input type="text" class="form-control userControl" placeholder="address" ng-model="updatedUser.address" ng-show="editable"></input>
+                                <input type="number" min="0" class="form-control userControl" placeholder="phone number" ng-model="updatedUser.phone" ng-show="editable"></input>
+                               <input type="text" class="form-control userControl" placeholder="company" ng-model="updatedUser.company" ng-show="editable"></input>
+                               <input type="text" class="form-control" rows="2" cols="80" placeholder="company info" ng-show="editable" ng-model="updatedUser.companyAddress"></input>
+                          </div>
+                     </div>
 
-                                    </div>
-                               </div>
+                       <!--edit buttons section-->
+                      <div class="text-right btns">
+                          <button ng-show="editMode" type="button" ng-click="editItem(userCopy)">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                          </button>
 
-                               <!--edit buttons section-->
-                              <div class="text-right btns">
-                                  <button ng-show="editMode" type="button" ng-click="editItem(userCopy)">
-                                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                                  </button>
+                            <button ng-show="editMode" type="button" ng-click="removeFromList(user._id)"><i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
 
-                                    <button ng-show="editMode" type="button" ng-click="removeFromList(user._id)"><i class="fa fa-trash" aria-hidden="true"></i>
-                                    </button>
-
-                                    <button class="save-icon-wrapper" type="button" ng-show="editable" ng-click="updateUser(user._id, updatedUser)">
-                                   <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                                    </button>
-                               </div>
+                            <button class="save-icon-wrapper" type="button" ng-show="editable" ng-click="updateUser(user._id, updatedUser)">
+                           <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </button>
+                       </div>
                   </div>
               </div>
 
@@ -94,6 +93,7 @@
                   <button type="button" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
               </div>
+
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/app.js"></script>
