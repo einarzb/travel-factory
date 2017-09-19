@@ -4,6 +4,8 @@
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="angular/angular.js"></script>
+
     <title>travel factory</title>
 </head>
 
@@ -50,12 +52,12 @@
                                     <p ng-hide="editable" class="text-left">
                                            <b>{{user.name}}</b> <br>
                                            <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br>
-                                           <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br>
+                                           <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br><br>
                                            <b>{{user.company}}</b><br>
                                            <span style="width:170px;display:inline-flex;">
                                              {{user.companyAddress}}
                                            </span> <br>
-                                           p:{{user.phone | phoneNumber}}
+                                           p:{{user.phone}}
                                         </p>
                                     <!--edit form-->
                                     <div class="userControl">
@@ -89,7 +91,6 @@
                   <button type="button" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
               </div>
-             <script src="angular/angular.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/app.js"></script>
