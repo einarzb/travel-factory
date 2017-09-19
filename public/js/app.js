@@ -2,6 +2,7 @@ var app = angular.module('travelFactoryApp', []);
 
 app.filter('phoneNumber', function(){
   return function (tel) {
+    console.log(tel);
       if (!tel) { return ''; }
 
       var value = tel.toString().trim().replace(/^\+/, '');

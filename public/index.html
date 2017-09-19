@@ -54,12 +54,12 @@
                           <p ng-hide="editable" class="text-left">
                                  <b>{{user.name}}</b> <br>
                                  <i style="color:grey;" class="fa fa-map-marker" aria-hidden="true"></i> {{user.address}} <br>
-                                 <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br><br>
+                                 <b>lat:</b> {{user.location.lat.toFixed(2)}} | <b>lng: </b>{{user.location.lng.toFixed(2)}} <br>
                                  <b>{{user.company}}</b><br>
                                  <span style="width:170px;display:inline-flex;">
                                    {{user.companyAddress}}
                                  </span> <br>
-                                 p: {{user.phone | phoneNumber}}
+                                 p:{{user.phone | phoneNumber}}
                               </p>
                           <!--edit form-->
                           <div class="userControl">
