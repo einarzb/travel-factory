@@ -35,7 +35,9 @@ app.controller('mainController', function($scope, usersFactory) {
     $('#formModal').modal('hide');
   }
 
-  $scope.saveUser = function(id, updatedUser){
+  $scope.updateUser = function(id, updatedUser) {
+    usersFactory.getLatLng(updatedUser.address).then(function(response) {
+      updatedUser.location = response;
       usersFactory.saveUser(id, updatedUser);
       $scope.editMode = true;
       this.editable = false;
